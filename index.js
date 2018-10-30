@@ -3,7 +3,9 @@ function getFirstSelector(selector) {
 }
 
 function nestedTarget() {
-	return document.getElementById('nested').getElementsByClassName('target')[0];
+	//return document.getElementById('nested').getElementsByClassName('target')[0];
+	return document.querySelector('#nested .target')
+
 }
 
 function increaseRankBy(n) {
@@ -12,6 +14,18 @@ function increaseRankBy(n) {
   		lis[i].innerHTML = (parseInt(lis[i].innerHTML) + n).toString();
 	}
 }
+
+// function deepestChild() {
+//   let node = document.getElementById('grand-node')
+//   let nextNode = node.children[0]
+
+//   while (nextNode) {
+//     node = nextNode
+//     nextNode = node.children[0]
+//   }
+
+//   return node
+// }
 
 function deepestChild() {
 	const nodes = document.querySelectorAll('div#grand-node')[0];
